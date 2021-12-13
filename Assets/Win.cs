@@ -1,18 +1,26 @@
+///////////////////////////////
+/// Win.cs
+/// Justin Dela Cruz
+/// 101127646
+/// Last Modified: 2021-12-12
+/// This .cs file helps Detect if
+/// the player has reached the end
+/// GAME2014 - Assignment 2
+//////////////////////////////
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Win : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject winMenu;
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            winMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }
