@@ -13,16 +13,13 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip playerJump, buttonHit, PlayerWin, PlayerLose, playerBounce;
+    public static AudioClip playerJump, playerBounce;
     static AudioSource audioSrc;
 
     void Start()
     {
         playerJump = Resources.Load<AudioClip>("Jump");
         playerBounce = Resources.Load<AudioClip>("Bounce");
-        buttonHit = Resources.Load<AudioClip>("Button");
-        PlayerWin = Resources.Load<AudioClip>("Fanfare");
-        PlayerLose = Resources.Load<AudioClip>("Fail");
 
         audioSrc = GetComponent<AudioSource>();
 
@@ -42,17 +39,8 @@ public class SoundManager : MonoBehaviour
             case "Jump":
                 audioSrc.PlayOneShot(playerJump);
                 break;
-            case "Fanfare":
-                audioSrc.PlayOneShot(PlayerWin);
-                break;
-            case "Button":
-                audioSrc.PlayOneShot(buttonHit);
-                break;
             case "Bounce":
                 audioSrc.PlayOneShot(playerBounce);
-                break;
-            case "Fail":
-                audioSrc.PlayOneShot(PlayerLose);
                 break;
         }
     }
