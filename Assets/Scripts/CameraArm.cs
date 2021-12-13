@@ -1,3 +1,12 @@
+///////////////////////////////
+/// CameraArm.cs
+/// Justin Dela Cruz
+/// 101127646
+/// Last Modified: 2021-12-12
+/// This .cs file helps the camera follow the player
+/// GAME2014 - Assignment 2
+//////////////////////////////
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

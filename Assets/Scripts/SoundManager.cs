@@ -1,5 +1,5 @@
 ///////////////////////////////
-/// PlayButtonBehaviour.cs
+/// SoundManager.cs
 /// Justin Dela Cruz
 /// 101127646
 /// Last Modified: 2021-12-12
@@ -13,12 +13,13 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip playerJump, buttonHit, PlayerWin, PlayerLose;
+    public static AudioClip playerJump, buttonHit, PlayerWin, PlayerLose, playerBounce;
     static AudioSource audioSrc;
 
     void Start()
     {
         playerJump = Resources.Load<AudioClip>("Jump");
+        playerBounce = Resources.Load<AudioClip>("Bounce");
         buttonHit = Resources.Load<AudioClip>("Button");
         PlayerWin = Resources.Load<AudioClip>("Fanfare");
         PlayerLose = Resources.Load<AudioClip>("Fail");
@@ -46,6 +47,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "Button":
                 audioSrc.PlayOneShot(buttonHit);
+                break;
+            case "Bounce":
+                audioSrc.PlayOneShot(playerBounce);
                 break;
             case "Fail":
                 audioSrc.PlayOneShot(PlayerLose);
